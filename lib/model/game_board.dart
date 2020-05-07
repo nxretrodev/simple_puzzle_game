@@ -57,11 +57,21 @@ class GameBoard {
   }
 
   void _suffleGame() {
-    int sortedNumbers = 0;
+    int maxValue = (this.rows * this.columns);
+    int nextNumber = 1;
 
-    //do {
-    //TODO: Obter números aleatórios
-    //} while (sortedNumbers < (this.rows * this.columns));
+    for (GamePiece gamePiece in _gamePieces) {
+      gamePiece.caption = '';
+    }
+
+    while (nextNumber < maxValue) {
+      int position = Random().nextInt(maxValue);
+
+      if (gamePieces[position].caption == '') {
+        gamePieces[position].caption = '$nextNumber';
+        nextNumber++;
+      }
+    }
   }
 
   bool finished() {
@@ -82,7 +92,7 @@ class GameBoard {
     String currentCaption = gamePiece.caption;
 
     if (finished()) {
-      //return ret;
+      return ret;
     }
 
     if (currentCaption == "") {

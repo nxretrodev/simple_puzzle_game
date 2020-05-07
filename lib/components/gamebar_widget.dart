@@ -11,7 +11,7 @@ class GameBar extends StatelessWidget implements PreferredSizeWidget {
 
   Color _getColor() {
     if (gameWon == null) {
-      return Colors.yellow[500];
+      return Colors.grey[300];
     } else if (gameWon == true) {
       return Colors.green[400];
     } else {
@@ -35,9 +35,9 @@ class GameBar extends StatelessWidget implements PreferredSizeWidget {
       color: Colors.orangeAccent,
       child: SafeArea(
         child: Container(
-          padding: EdgeInsets.all(10),
+          padding: EdgeInsets.all(20),
           child: CircleAvatar(
-            radius: 25,
+            radius: 23,
             backgroundColor: _getColor(),
             child: IconButton(
               padding: EdgeInsets.all(0),
